@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
       )
         handleOperator(value);
       else if (value === "=") handleEqual()
-      else if ("1234567890%".includes(value)) {
-        if (secondNumber.split("π").length === 1 || value === "%") secondNumber += value;
+      else if ("1234567890".includes(value)) {
+        if (secondNumber.split("π").length === 1) secondNumber += value;
         else {
           secondNumber = pimake(secondNumber)
           firstNumber = secondNumber
@@ -38,6 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
           upperNumber.innerText = firstNumber;
           lowerNumber.innerText = secondNumber;
         }
+      }
+      else if (value === "%") {
+        if (secondNumber !== "") secondNumber += value
       }
       lowerNumber.innerText = secondNumber;
       lowerNumber.scrollLeft = lowerNumber.scrollWidth;
@@ -50,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
     }
     if (!isNaN(key)) {
-      if (secondNumber.split("π").length === 1 || key === "%") secondNumber += key;
+      if (secondNumber.split("π").length === 1) secondNumber += key;
       else {
         secondNumber = pimake(secondNumber)
         firstNumber = secondNumber
@@ -61,6 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
         upperNumber.innerText = firstNumber;
         lowerNumber.innerText = secondNumber;
       }
+    }
+    if (key === "%" && secondNumber !== "") {
+      secondNumber += key
     }
     if (["+", "-", "*", "/"].includes(key)) {
       handleOperator(key)
