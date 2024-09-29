@@ -1,2 +1,2 @@
 # Calculator
-### [Demo](https://github.com/IstiakAR/Calculator)
+### [Demo](https://istiakar.github.io/Calculator/)
