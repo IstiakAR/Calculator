@@ -1,13 +1,10 @@
-/* * {
-  border: 1px solid red;
-} */
-
 html,
 body {
   height: 100vh;
   margin: 0;
   padding: 0;
   background: #D1E9F6;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
@@ -18,7 +15,7 @@ body {
   min-height: 100%;
   width: 100%;
   background: #D1E9F6;
-  overflow-y: auto;
+  overflow: hidden;
   padding: 0;
   margin: 0;
 }
@@ -38,9 +35,6 @@ body {
   padding-bottom: 0px;
   overflow-y: hidden;
 }
-
-/* @media only screen and (max-width: 600px) {
-} */
 
 .screen {
   display: flex;
@@ -62,8 +56,8 @@ body {
   height: 25%;
   width: 100%;
   color: #333333;
-  overflow-x: scroll;
   text-align: left;
+  overflow-x: hidden;
 }
 
 .lowerpart {
@@ -89,7 +83,9 @@ body {
   height: 70%;
   width: 100%;
   color: #333333;
-  overflow-x: scroll;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  word-break: break-all;
   text-align: right;
 }
 
@@ -131,4 +127,17 @@ body {
 #del,
 #clr {
   background: #FF6D60;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+  margin-left:10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #333333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111111;
 }
